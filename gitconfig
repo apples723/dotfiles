@@ -1,0 +1,9 @@
+[user]
+	name = Grant Siders
+	email = gsiders@2u.com
+[uer]
+	email = gsiders@2u.com\n
+[credential]
+	helper = osxkeychain
+[init]
+	defaultBranch = main
