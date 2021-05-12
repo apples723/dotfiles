@@ -6,3 +6,4 @@ export VAULT_ADDR=https://vault.main.prod.2u.com:8200/
 #vault cert for 2u-login
 export VAULT_CACERT=$HOME/.certs/vault-ca.pem
 source ~/.alias
+shopt -s histappend
