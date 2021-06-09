@@ -7,3 +7,4 @@ export VAULT_ADDR=https://vault.main.prod.2u.com:8200/
 export VAULT_CACERT=$HOME/.certs/vault-ca.pem
 source ~/.alias
 shopt -s histappend
+alias new_ec2="sh ~/.tf_ec2_generator/generate_ec2_tf.sh "

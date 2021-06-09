@@ -12,6 +12,10 @@ function cpt(){
   cp -f ~/.dotfiles/templates/main.tf $2/main.tf
 }
 
+#make file executable 
+alias x="chmod 755 "
+
+
 #connect to vpn from terminal
 #uses user password from keychain
 #additional script at /usr/local/bin/_vpn_autoconnect is used
@@ -41,10 +45,12 @@ vpn ()
     esac
 }
 #AWS creds generator
-alias 2l="2u-login"
+alias 2l="__auto_2u_login"
 #modify this file in v1i
 alias va="vi ~/.alias" 
+#config files and shortcuts
 alias dot="cd ~/.dotfiles" 
+alias sshconfig="vi ~/.ssh/config"
 #Git Shortcuts 
 alias gst="git status"
 alias gph="git push "
@@ -54,9 +60,9 @@ alias gl="git log --pretty=oneline -n 20 --graph"
 # Shortcuts
 alias home="cd $home"
 alias up="cd .." 
-alias dl="cd ~/Downloads/"
-alias dev="cd ~/dev/"
-alias awsd="cd ~/aws "
+alias dl="cd ~/Downloads/ "
+alias dev="cd ~/dev/ "
+alias awsd="cd ~/aws/ "
 alias inf="cd ~/aws/tf-it-inf-acct "
 alias ue1="cd ~/aws/tf-it-inf-acct/resources/ue1 "
 alias uw1="cd ~/aws/tf-it-inf-acct/resources/uw1 "
@@ -68,6 +74,9 @@ alias tfi="terraform init"
 alias tfp="terraform plan"
 alias tfa="terraform apply"
 alias tf="terraform " #space at ends allows tf as shortcut for terraform but can add command at end
+alias tfwp="terraform workspace select prod"
+alias tfwd="terraform workspace select dev" 
+alias tfwn="terraform workspace new "
 #ansible
 alias ansp="ansible-playbook "
 
@@ -89,7 +98,7 @@ alias wac-tunnel="mole tunnel 9443:UE1MGMT01:443 --profile sub --region us-east-
 #          Hostname: value of tag:Name
 #          Region: region of host (i.e us-east-1 )
 function rdp-tunnel(){
-  mole tunnel 3389:$1:3389 --profile sub --region $2
+  mole tunnel 3389:$1:3389 --region $2
 }
 #source my aliases i've stolen from others 
 source ~/.dotfiles/stolen_aliases
