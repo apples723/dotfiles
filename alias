@@ -14,7 +14,9 @@ function cpt(){
 
 #make file executable 
 alias x="chmod 755 "
+#my bash todo list 
 
+alias todo="vi ~/todo"
 
 #connect to vpn from terminal
 #uses user password from keychain
@@ -50,7 +52,7 @@ alias 2l="__auto_2u_login"
 alias va="vi ~/.alias" 
 #config files and shortcuts
 alias dot="cd ~/.dotfiles" 
-alias sshconfig="vi ~/.ssh/config"
+alias vs="vi ~/.ssh/config"
 #Git Shortcuts 
 alias gst="git status"
 alias gph="git push "
@@ -67,7 +69,7 @@ alias inf="cd ~/aws/tf-it-inf-acct "
 alias ue1="cd ~/aws/tf-it-inf-acct/resources/ue1 "
 alias uw1="cd ~/aws/tf-it-inf-acct/resources/uw1 "
 alias sandbox="cd ~/aws/tf-inf-sandbox/ "
-
+alias gr="cd ~/aws/tf-it-inf-acct/global-resources"
 #terraform
 alias tfaa="terraform apply --auto-approve"
 alias tfi="terraform init"
@@ -85,7 +87,7 @@ alias ansp="ansible-playbook "
 #show ec2 info 
 #usage: ec2 <tag:name> 
 function ec2(){
-  aws ec2 describe-instances --filters "Name=tag:Name,Values=$@" --profile sub --region=us-east-1 --output table
+  aws ec2 describe-instances --filters "Name=tag:Name,Values=$1" --profile sub --region=$2 --output table
 }
 
 #connects Windows Admin Center to https://wac
@@ -98,7 +100,7 @@ alias wac-tunnel="mole tunnel 9443:UE1MGMT01:443 --profile sub --region us-east-
 #          Hostname: value of tag:Name
 #          Region: region of host (i.e us-east-1 )
 function rdp-tunnel(){
-  mole tunnel 3389:$1:3389 --region $2
+  mole tunnel 3389:$1:3389 --region $2 --profile sub
 }
 #source my aliases i've stolen from others 
 source ~/.dotfiles/stolen_aliases
