@@ -30,7 +30,7 @@ vpn ()
     case "$command" in
         s | status)
             echo -e 'Checking current VPN status...\n';
-            eval "${_vpn_bin} -s status"
+            eval "${_vpn_bin} -s state"
         ;;
         c | connect)
             echo -e 'Connecting to VPN...\n';

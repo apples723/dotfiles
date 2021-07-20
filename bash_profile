@@ -6,5 +6,7 @@ export VAULT_ADDR=https://vault.main.prod.2u.com:8200/
 #vault cert for 2u-login
 export VAULT_CACERT=$HOME/.certs/vault-ca.pem
 source ~/.alias
+source ~/dotfiles/k8s_aliases
 shopt -s histappend
-alias new_ec2="sh ~/.tf_ec2_generator/generate_ec2_tf.sh "
+alias new_ec2="sh ~/.terraformify/terraformify.sh "
+alias new_ec2_dev="sh ~/.terraformify_dev/terraformify.sh "
