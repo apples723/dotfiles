@@ -46,6 +46,8 @@ vpn ()
         ;;
     esac
 }
+#Clear
+alias cl="clear"
 #AWS creds generator
 alias 2l="__auto_2u_login"
 #modify this file in v1i
@@ -60,6 +62,7 @@ alias gbr="git branch "
 alias gco="git checkout "
 alias gl="git log --pretty=oneline -n 20 --graph"
 # Shortcuts
+alias 2ur="cd ~/dev/repos/2u"
 alias home="cd $home"
 alias up="cd .." 
 alias dl="cd ~/Downloads/ "
@@ -83,7 +86,7 @@ alias tfwn="terraform workspace new "
 alias ansp="ansible-playbook "
 
 #aws commands 
-
+alias kc="kubectl "
 #show ec2 info 
 #usage: ec2 <tag:name> 
 function ec2(){
