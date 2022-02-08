@@ -17,5 +17,5 @@ if [[ $OSTYPE == "darwin20" ]]; then
     source ~/.alias
 fi
 if [[ $OSTYPE == "linux-gnu" ]]; then
-    ln -s ~/.dotfiles/linux_alias ~/.alias
+    source ~/.alias
 fi

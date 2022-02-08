@@ -1,4 +1,19 @@
-#### Kubernetes functions ####
+#K8S Shortcuts
+alias kcpo="kc get po" # get me all the pooooo
+alias kcdd="kc describe deployment " # descibe deployment by name 
+alias kcl="kc logs " # get pod logs
+alias kwatch="kc get po --watch | grep "
+alias kcpg="kc get po | grep "
+function kcba { 
+    if [ -z "$1" ]
+    then
+      echo "missing the app"
+    else
+      kubectl -l app=${1} get pods,svc,secrets,deployments
+    fi
+}
+
+#Stolen K8S functions
 # Quickly display / switch kubernetes contexts
 alias kc="kubectl"
  
