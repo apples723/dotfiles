@@ -1,5 +1,48 @@
 #!/usr/bin/env bash
 
+#AWS ECR Login with multiple profiles
+
+function ecr_login() {
+  local PROFILE=$1
+  local ECR_ARN=$2
+  local ERROR_STD_OUT=""
+  if [ -z "$1" ] 
+  then
+    echo "missing profile or ECR ARN"  1>&2
+    exit
+  fi
+  if [ -z "$2" ] 
+  then
+    echo "missing profile or ECR ARN" 1>&2
+  fi
+}
+
+
+#note stuff
+function notes {
+ vi ~/notes/${1}
+}
+
+#kubes stuff 
+alias kcpo="kc get po" # get me all the pooooo
+alias kcdd="kc describe deployment " # descibe deployment by name 
+alias kcl="kc logs " # get pod logs
+alias kwatch="kc get po --watch | grep "
+alias kcpg="kc get po | grep "
+function kcba { 
+    if [ -z "$1" ]
+    then
+      echo "missing the app"
+    else
+      kubectl -l app=${1} get pods,svc,secrets,deployments
+    fi
+}
+
+#homelab vnc tunnels
+
+alias ha-vnc="ssh -L 5903:localhost:5903 -C -N -l gsiders ha.gsiders.app"
+alias vm-vnc="ssh -L 5901:localhost:5901 -C -N -l gsiders vm.rad"
+
 # copy folders easier
 #usage: cpd directory_to_copy new_directory_name
 function cpd(){
@@ -17,7 +60,7 @@ alias x="chmod 755 "
 #my bash todo list 
 
 alias todo="vi ~/todo"
-
+alias wip="cd  ~/dev/repos/2u/wip"
 #connect to vpn from terminal
 #uses user password from keychain
 #additional script at /usr/local/bin/_vpn_autoconnect is used
@@ -56,11 +99,12 @@ alias va="vi ~/.alias"
 alias dot="cd ~/.dotfiles" 
 alias vs="vi ~/.ssh/config"
 #Git Shortcuts 
-alias gst="git status"
-alias gph="git push "
-alias gbr="git branch "
-alias gco="git checkout "
+alias gts="git status"
+alias gtp="git push "
+alias gtb="git branch "
+alias gtco="git checkout "
 alias gl="git log --pretty=oneline -n 20 --graph"
+alias glp="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 # Shortcuts
 alias 2ur="cd ~/dev/repos/2u"
 alias home="cd $home"
@@ -73,6 +117,7 @@ alias ue1="cd ~/aws/tf-it-inf-acct/resources/ue1 "
 alias uw1="cd ~/aws/tf-it-inf-acct/resources/uw1 "
 alias sandbox="cd ~/aws/tf-inf-sandbox/ "
 alias gr="cd ~/aws/tf-it-inf-acct/global-resources"
+alias tfd="cd ~/dev/repos/2u/tf"
 #terraform
 alias tfaa="terraform apply --auto-approve"
 alias tfi="terraform init"
@@ -81,6 +126,7 @@ alias tfa="terraform apply"
 alias tf="terraform " #space at ends allows tf as shortcut for terraform but can add command at end
 alias tfwp="terraform workspace select prod"
 alias tfwd="terraform workspace select dev" 
+alias tfw="terraform workspace "
 alias tfwn="terraform workspace new "
 #ansible
 alias ansp="ansible-playbook "
