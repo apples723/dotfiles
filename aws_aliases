@@ -1,0 +1,33 @@
+#config stuff
+
+#vault addr for 2u-login
+export VAULT_ADDR=https://vault.main.prod.2u.com:8200/
+#aws region 
+export AWS_REGION=us-west-2
+
+#aws aliases to save time
+
+#ecr docker logins 
+alias ecr_delivery="aws ecr get-login-password --profile delivery --region us-west-2 | docker login --username AWS --password-stdin 823386275404.dkr.ecr.us-west-2.amazonaws.com"
+
+#AWS ECR Login with multiple profiles
+function ecr_login() {
+  local PROFILE=$1
+  local ECR_ARN=$2
+  local ERROR_STD_OUT=""
+  if [ -z "$1" ] 
+  then
+    echo "missing profile or ECR ARN"  1>&2
+    exit
+  fi
+  if [ -z "$2" ] 
+  then
+    echo "missing profile or ECR ARN" 1>&2
+  fi
+}
+
+#show ec2 info 
+#usage: ec2 <tag:name> 
+function ec2(){
+  aws ec2 describe-instances --filters "Name=tag:Name,Values=$1" --region=$2 --output table
+}
