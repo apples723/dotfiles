@@ -1,0 +1,58 @@
+#!/usr/bin/env bash
+
+
+#note stuff
+function notes {
+ vi ~/notes/${1}
+}
+
+# copy folders easier
+#usage: cpd directory_to_copy new_directory_name
+function cpd(){
+  cp -r $1 $2 
+}
+
+
+#make file executable 
+alias x="chmod 755 "
+#my bash todo list 
+
+alias todo="vi ~/todo"
+
+#Clear
+alias cl="clear"
+
+#modify this file in v1i
+alias va="vi ~/.alias" 
+#config files and shortcuts
+alias dot="cd ~/.dotfiles" 
+alias vs="vi ~/.ssh/config"
+#Git Shortcuts 
+alias gts="git status"
+alias gtp="git push "
+alias gtb="git branch "
+alias gtco="git checkout "
+alias gl="git log --pretty=oneline -n 20 --graph"
+alias glp="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+# Shortcuts
+alias home="cd $home"
+alias up="cd .." 
+alias dl="cd ~/Downloads/ "
+alias dev="cd ~/dev/ "
+alias awsd="cd ~/dev/aws/ "
+#terraform
+alias tfaa="terraform apply --auto-approve"
+alias tfi="terraform init"
+alias tfp="terraform plan"
+alias tfa="terraform apply"
+alias tf="terraform " #space at ends allows tf as shortcut for terraform but can add command at end
+alias tfwp="terraform workspace select prod"
+alias tfwd="terraform workspace select dev" 
+alias tfw="terraform workspace "
+alias tfwn="terraform workspace new "
+#ansible
+alias ansp="ansible-playbook "
+
+
+#source my aliases i've stolen from others 
+source ~/.dotfiles/stolen_aliases

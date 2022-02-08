@@ -1,41 +1,8 @@
 #!/usr/bin/env bash
 
-#AWS ECR Login with multiple profiles
-
-function ecr_login() {
-  local PROFILE=$1
-  local ECR_ARN=$2
-  local ERROR_STD_OUT=""
-  if [ -z "$1" ] 
-  then
-    echo "missing profile or ECR ARN"  1>&2
-    exit
-  fi
-  if [ -z "$2" ] 
-  then
-    echo "missing profile or ECR ARN" 1>&2
-  fi
-}
-
-
-#note stuff
+#note
 function notes {
  vi ~/notes/${1}
-}
-
-#kubes stuff 
-alias kcpo="kc get po" # get me all the pooooo
-alias kcdd="kc describe deployment " # descibe deployment by name 
-alias kcl="kc logs " # get pod logs
-alias kwatch="kc get po --watch | grep "
-alias kcpg="kc get po | grep "
-function kcba { 
-    if [ -z "$1" ]
-    then
-      echo "missing the app"
-    else
-      kubectl -l app=${1} get pods,svc,secrets,deployments
-    fi
 }
 
 #homelab vnc tunnels
@@ -58,7 +25,6 @@ function cpt(){
 #make file executable 
 alias x="chmod 755 "
 #my bash todo list 
-
 alias todo="vi ~/todo"
 alias wip="cd  ~/dev/repos/2u/wip"
 #connect to vpn from terminal
@@ -105,7 +71,9 @@ alias gtb="git branch "
 alias gtco="git checkout "
 alias gl="git log --pretty=oneline -n 20 --graph"
 alias glp="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
-# Shortcuts
+
+
+#Directory Shortcuts
 alias 2ur="cd ~/dev/repos/2u"
 alias home="cd $home"
 alias up="cd .." 
@@ -113,12 +81,14 @@ alias dl="cd ~/Downloads/ "
 alias dev="cd ~/dev/ "
 alias awsd="cd ~/aws/ "
 alias inf="cd ~/aws/tf-it-inf-acct "
-alias ue1="cd ~/aws/tf-it-inf-acct/resources/ue1 "
-alias uw1="cd ~/aws/tf-it-inf-acct/resources/uw1 "
-alias sandbox="cd ~/aws/tf-inf-sandbox/ "
-alias gr="cd ~/aws/tf-it-inf-acct/global-resources"
+alias inf_ue1="cd ~/aws/tf-it-inf-acct/resources/ue1 "
+alias inf_uw1="cd ~/aws/tf-it-inf-acct/resources/uw1 "
+alias inf_sandbox="cd ~/aws/tf-inf-sandbox/ "
+alias inf_gr="cd ~/aws/tf-it-inf-acct/global-resources"
 alias tfd="cd ~/dev/repos/2u/tf"
-#terraform
+alias tfops="cd ~/dev/repos/2u/tf/tf-devops"
+
+#Terraform Shortcuts
 alias tfaa="terraform apply --auto-approve"
 alias tfi="terraform init"
 alias tfp="terraform plan"
@@ -131,25 +101,11 @@ alias tfwn="terraform workspace new "
 #ansible
 alias ansp="ansible-playbook "
 
-#aws commands 
-alias kc="kubectl "
-#show ec2 info 
-#usage: ec2 <tag:name> 
-function ec2(){
-  aws ec2 describe-instances --filters "Name=tag:Name,Values=$1" --profile sub --region=$2 --output table
-}
+#IMPORTS 
 
-#connects Windows Admin Center to https://wac
-#need to map in hosts localhost:443 -> wac
-alias wac-tunnel="mole tunnel 9443:UE1MGMT01:443 --profile sub --region us-east-1"
-
-#add rdp tunnel 
-#usage:
-#   rdp-tunnel <hostname> <region>
-#          Hostname: value of tag:Name
-#          Region: region of host (i.e us-east-1 )
-function rdp-tunnel(){
-  mole tunnel 3389:$1:3389 --region $2 --profile sub
-}
-#source my aliases i've stolen from others 
+#AWS
+source ~/.dotfiles/aws_aliases
+#Kube
+source ~/.dotfiles/k8s_aliases
+#stolen aliases
 source ~/.dotfiles/stolen_aliases
