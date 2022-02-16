@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 #hue commands 
-source ~/.dotfile/hue_api.sh
+source ~/.dotfiles/hue_api.sh
 
 #note
 function notes {
@@ -105,7 +105,8 @@ alias tfwn="terraform workspace new "
 alias ansp="ansible-playbook "
 
 #IMPORTS 
-
+#Active Directory
+source ~/.dotfiles/ad_mgmt_alias
 #AWS
 source ~/.dotfiles/aws_aliases
 #Kube
