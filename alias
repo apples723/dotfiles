@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+#hue commands 
+source ~/.dotfile/hue_api.sh
+
 #note
 function notes {
  vi ~/notes/${1}
