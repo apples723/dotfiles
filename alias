@@ -30,6 +30,9 @@ alias x="chmod 755 "
 #my bash todo list 
 alias todo="vi ~/todo"
 alias wip="cd  ~/dev/repos/2u/wip"
+#2u-login valut no vpn
+alias 2lv="/Users/gsiders/dev/repos/2u/2u-login/src/2u-login.py -v" 
+
 #connect to vpn from terminal
 #uses user password from keychain
 #additional script at /usr/local/bin/_vpn_autoconnect is used
@@ -90,7 +93,7 @@ alias inf_sandbox="cd ~/aws/tf-inf-sandbox/ "
 alias inf_gr="cd ~/aws/tf-it-inf-acct/global-resources"
 alias tfd="cd ~/dev/repos/2u/tf"
 alias tfops="cd ~/dev/repos/2u/tf/tf-devops"
-
+alias temp="cd ~/dev/repos/2u/temp"
 #Terraform Shortcuts
 alias tfaa="terraform apply --auto-approve"
 alias tfi="terraform init"
