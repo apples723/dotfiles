@@ -4,7 +4,7 @@ export LSCOLORS=ExFxBxDxCxegedabagacad
 
 #vault cert for 2u-login
 export VAULT_CACERT=$HOME/.certs/vault-ca.pem
-if [[ $OSTYPE == "darwin20" ]]; then
+if [[ $OSTYPE == "darwin21" ]]; then
     export GOPATH=$HOME/go
     export GOROOT="$(brew --prefix golang)/libexec"
     export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
