@@ -7,3 +7,5 @@
   st = status
   br = branch
 
+[credential]
+	helper = osxkeychain

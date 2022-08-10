@@ -13,7 +13,6 @@ function kcba {
     fi
 }
 
-#Stolen K8S functions
 # Quickly display / switch kubernetes contexts
 alias kc="kubectl"
  

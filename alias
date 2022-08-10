@@ -18,53 +18,15 @@ alias vm-vnc="ssh -L 5901:localhost:5901 -C -N -l gsiders vm.rad"
 function cpd(){
   cp -r $1 $2 
 }
-# copy terraform folder for use as a template
-function cpt(){
-  cp -r $1 $2
-  rm -rf $2/.terraform
-  cp -f ~/.dotfiles/templates/main.tf $2/main.tf
-}
+
 
 #make file executable 
 alias x="chmod 755 "
 #my bash todo list 
 alias todo="vi ~/todo"
-alias wip="cd  ~/dev/repos/2u/wip"
-#2u-login valut no vpn
-alias 2lv="/Users/gsiders/dev/repos/2u/2u-login/src/2u-login.py -v" 
 
-#connect to vpn from terminal
-#uses user password from keychain
-#additional script at /usr/local/bin/_vpn_autoconnect is used
-#see: github.com/2uinc/devops-patters/team-process/onboarding.md
-vpn ()
-{
-    local command="${1:-status}";
-    local -r _vpn_bin='/opt/cisco/anyconnect/bin/vpn';
-    local -r _vpn_net='2U Corp Network';
-    case "$command" in
-        s | status)
-            echo -e 'Checking current VPN status...\n';
-            eval "${_vpn_bin} -s state"
-        ;;
-        c | connect)
-            echo -e 'Connecting to VPN...\n';
-            _vpn_autoconnect
-        ;;
-        d | disconnect)
-            echo -e 'Disconnecting from VPN...\n';
-            eval "${_vpn_bin} -s disconnect"
-        ;;
-        *)
-            echo "Invalid option '${command}' ([s]tatus|[c]onnect|[d]isconnect)";
-            return 1
-        ;;
-    esac
-}
 #Clear
 alias cl="clear"
-#AWS creds generator
-alias 2l="__auto_2u_login"
 #modify this file in v1i
 alias va="vi ~/.alias" 
 #config files and shortcuts
@@ -80,20 +42,10 @@ alias glp="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset 
 
 
 #Directory Shortcuts
-alias 2ur="cd ~/dev/repos/2u"
 alias home="cd $home"
 alias up="cd .." 
 alias dl="cd ~/Downloads/ "
 alias dev="cd ~/dev/ "
-alias awsd="cd ~/aws/ "
-alias inf="cd ~/aws/tf-it-inf-acct "
-alias inf_ue1="cd ~/aws/tf-it-inf-acct/resources/ue1 "
-alias inf_uw1="cd ~/aws/tf-it-inf-acct/resources/uw1 "
-alias inf_sandbox="cd ~/aws/tf-inf-sandbox/ "
-alias inf_gr="cd ~/aws/tf-it-inf-acct/global-resources"
-alias tfd="cd ~/dev/repos/2u/tf"
-alias tfops="cd ~/dev/repos/2u/tf/tf-devops"
-alias temp="cd ~/dev/repos/2u/temp"
 #Terraform Shortcuts
 alias tfaa="terraform apply --auto-approve"
 alias tfi="terraform init"
@@ -108,11 +60,10 @@ alias tfwn="terraform workspace new "
 alias ansp="ansible-playbook "
 
 #IMPORTS 
-#Active Directory
-source ~/.dotfiles/ad_mgmt_alias
-#AWS
-source ~/.dotfiles/aws_aliases
+
 #Kube
 source ~/.dotfiles/k8s_aliases
 #stolen aliases
 source ~/.dotfiles/stolen_aliases
+#private work/nda related aliases 
+source ~/.dotfiles/private/slalom
