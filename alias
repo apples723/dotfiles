@@ -30,7 +30,7 @@ alias cl="clear"
 #modify this file in v1i
 alias va="vi ~/.alias" 
 #config files and shortcuts
-alias dot="cd ~/.dotfiles" 
+alias dtf="cd ~/.dotfiles" 
 alias vs="vi ~/.ssh/config"
 #Git Shortcuts 
 alias gts="git status"
@@ -58,6 +58,11 @@ alias tfw="terraform workspace "
 alias tfwn="terraform workspace new "
 #ansible
 alias ansp="ansible-playbook "
+#Dock Controls 
+alias dleft="defaults write com.apple.dock orientation left; killall Dock"
+alias dright="defaults write com.apple.dock orientation right; killall Dock"
+alias dbottom="defaults write com.apple.dock orientation bottom; killall Dock"
+
 
 #IMPORTS 
 
