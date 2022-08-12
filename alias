@@ -65,7 +65,8 @@ alias dbottom="defaults write com.apple.dock orientation bottom; killall Dock"
 
 
 #IMPORTS 
-
+#AWS 
+source ~/.dotfiles/aws_aliases
 #Kube
 source ~/.dotfiles/k8s_aliases
 #stolen aliases

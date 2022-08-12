@@ -1,7 +1,3 @@
-
-#aws region 
-export AWS_REGION=us-west-2
-
 #AWS ECR Login with multiple profiles
 function ecr_login() {
   local PROFILE=$1
