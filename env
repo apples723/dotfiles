@@ -4,3 +4,5 @@ export PATH=$PATH:$GOROOT/bin:$GOPATH/bin:/usr/local/opt/mysql@5.7/bin
 export PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
 #AWS
 export AWS_REGION=us-west-2
+#Disable Brew auto-update
+export HOMEBREW_NO_AUTO_UPDATE=1
