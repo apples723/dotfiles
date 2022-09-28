@@ -1,6 +1,6 @@
 [user]
 	name = Grant Siders
-	email = gsiders@2u.com
+	email = gsiders@sorenson.com
 [alias]
   co = checkout
   ci = commit
@@ -11,3 +11,5 @@
 	helper = osxkeychain
 [url "ssh://git@github.com/"]
 	insteadOf = https://github.com/
+[init]
+	defaultBranch = master

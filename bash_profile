@@ -5,13 +5,12 @@ export LSCOLORS=ExFxBxDxCxegedabagacad
 if [[ $OSTYPE == "darwin21" ]]; then
     eval "$(/opt/homebrew/bin/brew shellenv)"   
     shopt -s histappend
-    complete -C '/usr/local/bin/aws_completer' aws
+    complete -C '/opt/homebrew/bin/aws_completer' aws
     #bash completion
     [[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
     source <(kubectl completion bash)
-    #shell env variables
-    source ~/.dotfiles/env 
-    source ~/.alias
+    #source all the things
+    source ~/.dotfiles/all_the_things
 fi
 if [[ $OSTYPE == "linux-gnu" ]]; then
     source ~/.alias

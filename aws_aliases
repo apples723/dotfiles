@@ -1,3 +1,5 @@
+alias viaws="vi ~/.aws/credentials"
+
 #AWS ECR Login with multiple profiles
 function ecr_login() {
   local PROFILE=$1
