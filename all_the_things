@@ -1,0 +1,15 @@
+#ALL THE GOOD STUFF
+#Alias 
+source ~/.alias
+#AWS 
+source ~/.dotfiles/aws_aliases
+#Kube
+source ~/.dotfiles/k8s_aliases
+#stolen aliases
+source ~/.dotfiles/stolen_aliases
+#functions
+source ~/.dotfiles/functions
+#envs
+source ~/.dotfiles/env
+#private work/nda related aliases 
+source ~/.dotfiles/private/slalom

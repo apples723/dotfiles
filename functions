@@ -1,0 +1,21 @@
+
+function open_repo()
+{
+  if git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
+    local url
+    url=$(git config --get remote.origin.url \
+      | sed -e "s/git@/https:\/\//g" \
+      | sed -e "s/com:/com\//"
+    )
+    open "$url"
+  else
+    echo 'Not inside git repository' 1>&2
+    return 1
+  fi
+}
+
+# copy folders easier
+#usage: cpd directory_to_copy new_directory_name
+function cpd(){
+  cp -r $1 $2 
+}
