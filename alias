@@ -10,6 +10,10 @@ function notes {
  vi ~/notes/${1}
 }
 
+# swtich between work off on
+alias woff="work_mode off; dbottom"
+alias won="work_mode on; dleft"
+
 #homelab vnc tunnels
 
 alias ha-vnc="ssh -L 5903:localhost:5903 -C -N -l gsiders ha.gsiders.app"

@@ -1,3 +1,17 @@
+function work_mode
+{
+  if [[ ${1} == "off" ]]
+  then
+    dockutil --remove 'Microsoft Teams'
+    dockutil --remove 'Microsoft Outlook'
+  fi
+  if [[ ${1} == "on" ]]
+  then 
+    dockutil --add '/Applications/Microsoft Teams.app'
+    dockutil --add '/Applications/Microsoft Outlook.app'
+  fi
+}
+
 
 function open_repo()
 {
