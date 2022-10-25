@@ -6,7 +6,8 @@
   ci = commit
   st = status
   br = branch
-
+[core]
+  excludesfile = ~/.gitignore_global
 [credential]
 	helper = osxkeychain
 [url "ssh://git@github.com/"]
