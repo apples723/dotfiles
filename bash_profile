@@ -2,6 +2,7 @@
 export PS1="\[\033[33;1m\]\w\[\033[m\]\$ "
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
+export HISTTIMEFORMAT="%d/%m/%y %T "
 if [[ $OSTYPE == "darwin21" ]]; then
     eval "$(/opt/homebrew/bin/brew shellenv)"   
     shopt -s histappend

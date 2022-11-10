@@ -1,5 +1,9 @@
 alias viaws="vi ~/.aws/credentials"
 
+#login to sso quicker
+alias aws_login="aws sso login --profile "
+
+
 #AWS ECR Login with multiple profiles
 function ecr_login() {
   local PROFILE=$1
