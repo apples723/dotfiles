@@ -14,5 +14,5 @@ if [[ $OSTYPE == "darwin21" ]]; then
 fi
 if [[ $OSTYPE == "linux-gnu" ]]; then
     source ~/.alias
-    source ~/stolen_alias_linux
+    source ~/.dotfiles/all_the_things_linux
 fi
