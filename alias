@@ -2,9 +2,16 @@
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$HOME/dev/terravision:$PATH"
 eval "$(pyenv init -)"
+
+#api
+alias be_nice="echo 'here is a tip';curl -s -X PUT https://api.gsiders.app/nice | jq .tip"
+alias update_cw="ssh gsweb ./update.sh"
+alias cwd="cd ~/dev/apples723/cw"
+#openai
+source ~/.dotfiles/private/keys
 #hue commands 
 source ~/.dotfiles/hue_api.sh
-
+alias tempd="cd ~/dev/temp" 
 #note
 function notes {
  vi ~/notes/${1}
@@ -24,6 +31,9 @@ alias x="chmod 755 "
 #my bash todo list 
 alias todo="vi ~/todo"
 
+#fix ssh host
+alias vsf="vi ~/.ssh/known_hosts"
+
 #Clear
 alias cl="clear"
 #modify this file in v1i
@@ -31,6 +41,7 @@ alias va="vi ~/.alias"
 #config files and shortcuts
 alias dtf="cd ~/.dotfiles" 
 alias vs="vi ~/.ssh/config"
+alias app_dev="cd ~/dev/apples723 "
 #Git Shortcuts 
 alias gts="git status"
 alias gtp="git push "

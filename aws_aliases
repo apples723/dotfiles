@@ -1,5 +1,7 @@
 alias viaws="vi ~/.aws/credentials"
-
+#granted config
+#https://github.com/common-fate/granted
+alias assume="source assume"
 #login to sso quicker
 alias aws_login="aws sso login --profile "
 
