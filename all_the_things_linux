@@ -1,0 +1,7 @@
+#ALL THE GOOD STUFF
+#Alias 
+source ~/.alias
+#AWS 
+source ~/.dotfiles/aws_aliases
+#stolen aliases
+source ~/.dotfiles/stolen_aliases_linux

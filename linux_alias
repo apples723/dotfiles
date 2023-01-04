@@ -54,5 +54,3 @@ alias tfwn="terraform workspace new "
 alias ansp="ansible-playbook "
 
 
-#source my aliases i've stolen from others 
-source ~/.dotfiles/stolen_aliases
