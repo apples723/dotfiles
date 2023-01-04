@@ -14,9 +14,5 @@ if [[ $OSTYPE == "darwin21" ]]; then
 fi
 if [[ $OSTYPE == "linux-gnu" ]]; then
     source ~/.alias
-<<<<<<< Updated upstream
-    source ~/.dotfiles/all_the_things_linux
-=======
     source ~/stolen_alias_linux
->>>>>>> Stashed changes
 fi
