@@ -1,4 +1,9 @@
-alias viaws="vi ~/.aws/credentials"
+export KOPS_STATE_STORE=s3://kubeski.io
+alias viaws="vi ~/.aws/config"
+alias viawscred="vi ~/.aws/credentials"
+alias awsp=". ~/.dotfiles/switch_aws_profile.sh "
+
+
 #granted config
 #https://github.com/common-fate/granted
 alias assume="source assume"

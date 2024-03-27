@@ -1,8 +1,24 @@
 #!/usr/bin/env bash
+alias viawsc="vi ~/.aws/credentials"
+
+#kfb shortcuts
+alias kfbp="cd ~/dev/kfb-dev/1-prod-repos"
+alias kfbd="cd ~/dev/kfb-dev/2-dev-repos"
+alias kfb="cd ~/dev/kfb-dev"
+alias kfbnet="cd ~/dev/kfb-dev/1-prod-repos/tf/kfb-net"
+alias kfbtfp="cd ~/dev/kfb-dev/1-prod-repos/tf"
+
+alias viawsc="vi ~/.aws/config"
+alias idlab="cd ~/dev/apples723/awslab/idlabs"
+alias awslab="cd ~/dev/apples723/awslab"
+alias flask-lab="cd ~/dev/apples723/awslab-flask-app"
+alias wwaft="cd ~/dev/apples723/wizarding-world-aft"
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$HOME/dev/terravision:$PATH"
 eval "$(pyenv init -)"
-
+alias devi="cd ~/dev/slalom" 
+alias tfv="tf validate"
+alias tfc="tf console"
 #api
 alias be_nice="echo 'here is a tip';curl -s -X PUT https://api.gsiders.app/nice | jq .tip"
 alias update_cw="ssh gsweb ./update.sh"
@@ -36,12 +52,12 @@ alias vsf="vi ~/.ssh/known_hosts"
 
 #Clear
 alias cl="clear"
-#modify this file in v1i
+#modfy this file in v1i
 alias va="vi ~/.alias" 
 #config files and shortcuts
 alias dtf="cd ~/.dotfiles" 
 alias vs="vi ~/.ssh/config"
-alias app_dev="cd ~/dev/apples723 "
+alias github_dev="cd ~/dev/apples723 "
 #Git Shortcuts 
 alias gts="git status"
 alias gtp="git push "
@@ -49,7 +65,8 @@ alias gtb="git branch "
 alias gtco="git checkout "
 alias gl="git log --pretty=oneline -n 20 --graph"
 alias glp="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
-
+alias gdc="git diff --cached"
+alias gd="git diff"
 
 #Directory Shortcuts
 alias home="cd $home"

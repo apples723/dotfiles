@@ -1,9 +1,10 @@
 #Shell customizations
-export PS1="\[\033[33;1m\]\w\[\033[m\]\$ "
+export ENVIRONMENT="DEVELOPMENT"
+export PS1="\[\033[33;1m\]\W\[\033[m\]\$ "
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
 export HISTTIMEFORMAT="%d/%m/%y %T "
-if [[ $OSTYPE == "darwin21" ]]; then
+if [[ $OSTYPE == "darwin22" ]]; then
     eval "$(/opt/homebrew/bin/brew shellenv)"   
     shopt -s histappend
     complete -C '/opt/homebrew/bin/aws_completer' aws
@@ -16,3 +17,7 @@ if [[ $OSTYPE == "linux-gnu" ]]; then
     source ~/.alias
     source ~/.dotfiles/all_the_things_linux
 fi
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

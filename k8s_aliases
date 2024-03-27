@@ -1,3 +1,4 @@
+
 #K8S Shortcuts
 alias kcpo="kc get po" # get me all the pooooo
 alias kcdd="kc describe deployment " # descibe deployment by name 

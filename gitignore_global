@@ -1,1 +1,4 @@
+**/__pycache__/**
+.terraform.lock.hcl
 **/local/**
+**/.vscode/**

@@ -3,6 +3,9 @@ export PATH=$PATH:$GOROOT/bin:$GOPATH/bin:/usr/local/opt/mysql@5.7/bin
 #Puppeter for azure aws login
 export PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
 #AWS
-export AWS_REGION=us-west-2
+export AWS_REGION="us-east-1"
+export AWS_PROFILE="none selected"
 #Disable Brew auto-update
 export HOMEBREW_NO_AUTO_UPDATE=1
+#API Keys
+source ~/.dotfiles/private/keys
