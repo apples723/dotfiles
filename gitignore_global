@@ -1,4 +1,5 @@
 **/__pycache__/**
 .terraform.lock.hcl
 **/local/**
+**/plan.tfplan
 **/.vscode/**
