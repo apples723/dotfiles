@@ -2,7 +2,7 @@ export KOPS_STATE_STORE=s3://kubeski.io
 alias viaws="vi ~/.aws/config"
 alias viawscred="vi ~/.aws/credentials"
 alias awsp=". ~/.dotfiles/switch_aws_profile.sh "
-
+alias awsid="aws sts get-caller-identity"
 
 #granted config
 #https://github.com/common-fate/granted
@@ -13,18 +13,14 @@ alias aws_login="aws sso login --profile "
 
 #AWS ECR Login with multiple profiles
 function ecr_login() {
-  local PROFILE=$1
-  local ECR_ARN=$2
-  local ERROR_STD_OUT=""
+  local ECR_ARN=$1
   if [ -z "$1" ] 
   then
-    echo "missing profile or ECR ARN"  1>&2
+    echo "missing ECR ARN"  1>&2
     exit
   fi
-  if [ -z "$2" ] 
-  then
-    echo "missing profile or ECR ARN" 1>&2
-  fi
+  aws ecr get-login-password | docker login --username AWS --password-stdin $ECR_ARN
+
 }
 
 #show ec2 info 

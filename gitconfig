@@ -8,9 +8,6 @@
   br = branch
 [core]
   excludesfile = ~/.gitignore_global
-[credential]
-  helper = !aws --profile kfb-tfrepo codecommit credential-helper $@
-  UseHttpPath = true
 [url "ssh://git@github.com/"]
 	insteadOf = https://github.com/
 [init]

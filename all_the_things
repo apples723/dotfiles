@@ -1,4 +1,5 @@
 #ALL THE GOOD STUFF
+export PATH="$HOME/.dotfiles:$PATH"
 #Alias 
 source ~/.alias
 #AWS 

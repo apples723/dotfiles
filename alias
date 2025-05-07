@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 alias viawsc="vi ~/.aws/credentials"
+#bsam shortcuts
 
+alias cfnatf="cd ~/dev/bsam/cfna/tf"
+alias cfnatfn="cd ~/dev/bsam/cfna/tf/cfna-aws-network-account"
+alias bsamdev="cd ~/dev/bsam"
 #kfb shortcuts
 alias kfbp="cd ~/dev/kfb-dev/1-prod-repos"
 alias kfbd="cd ~/dev/kfb-dev/2-dev-repos"

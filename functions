@@ -33,3 +33,27 @@ function open_repo()
 function cpd(){
   cp -r $1 $2 
 }
+
+
+#!/bin/bash
+
+# Function to start AWS CodePipeline execution with variables
+# Example usage:
+# start_codepipeline kfb-iam-deployment-planner "TARGET_ACCOUNT_ID=ALL"
+
+start_codepipeline() {
+  local pipeline_name=$1
+  shift # Remove the first argument (pipeline name), rest are variables
+
+  # Construct the variable arguments in shorthand syntax "name=value"
+  local variable_args=""
+  for var in "$@"; do
+    variable_args+="name=$(echo $var | cut -d'=' -f1),value=$(echo $var | cut -d'=' -f2) "
+  done
+
+  # Start the CodePipeline with variables
+  aws codepipeline start-pipeline-execution \
+    --name "$pipeline_name" \
+    --variables $variable_args
+}
+
