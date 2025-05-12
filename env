@@ -7,5 +7,3 @@ export AWS_REGION="us-east-1"
 export AWS_PROFILE="none selected"
 #Disable Brew auto-update
 export HOMEBREW_NO_AUTO_UPDATE=1
-#API Keys
-source ~/.dotfiles/private/keys

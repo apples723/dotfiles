@@ -12,5 +12,3 @@ source ~/.dotfiles/stolen_aliases
 source ~/.dotfiles/functions
 #envs
 source ~/.dotfiles/env
-#private work/nda related aliases 
-source ~/.dotfiles/private/slalom
