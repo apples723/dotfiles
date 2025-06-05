@@ -2,6 +2,7 @@
 export PATH="$HOME/.dotfiles:$PATH"
 #Alias 
 source ~/.alias
+source ~/.dotfiles/private/alias
 #AWS 
 source ~/.dotfiles/aws_aliases
 #Kube

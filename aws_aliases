@@ -1,4 +1,3 @@
-export KOPS_STATE_STORE=s3://kubeski.io
 alias viaws="vi ~/.aws/config"
 alias viawscred="vi ~/.aws/credentials"
 alias awsp=". ~/.dotfiles/switch_aws_profile.sh "

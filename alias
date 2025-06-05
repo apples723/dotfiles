@@ -1,36 +1,14 @@
 #!/usr/bin/env bash
 alias viawsc="vi ~/.aws/credentials"
-#bsam shortcuts
-
-alias cfnatf="cd ~/dev/bsam/cfna/tf"
-alias cfnatfn="cd ~/dev/bsam/cfna/tf/cfna-aws-network-account"
-alias bsamdev="cd ~/dev/bsam"
-#kfb shortcuts
-alias kfbp="cd ~/dev/kfb-dev/1-prod-repos"
-alias kfbd="cd ~/dev/kfb-dev/2-dev-repos"
-alias kfb="cd ~/dev/kfb-dev"
-alias kfbnet="cd ~/dev/kfb-dev/1-prod-repos/tf/kfb-net"
-alias kfbtf="cd ~/dev/kfb-dev/1-prod-repos/tf"
-alias kfbtfl1="cd ~/dev/kfb-dev/1-prod-repos/tf-l1"
-alias kfbiac="cd ~/dev/kfb-dev/1-prod-repos/iac-platform"
-alias kfbtfiac="cd ~/dev/kfb-dev/1-prod-repos/tf/kfb-iac"
-alias kfbtfm="cd ~/dev/kfb-dev/1-prod-repos/modules/"
-
 alias viawsc="vi ~/.aws/config"
-alias idlab="cd ~/dev/apples723/awslab/idlabs"
-alias awslab="cd ~/dev/apples723/awslab"
-alias flask-lab="cd ~/dev/apples723/awslab-flask-app"
-alias wwaft="cd ~/dev/apples723/wizarding-world-aft"
+
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$HOME/dev/terravision:$PATH"
 eval "$(pyenv init -)"
 alias devi="cd ~/dev/slalom" 
 alias tfv="tf validate"
 alias tfc="tf console"
-#api
-alias be_nice="echo 'here is a tip';curl -s -X PUT https://api.gsiders.app/nice | jq .tip"
-alias update_cw="ssh gsweb ./update.sh"
-alias cwd="cd ~/dev/apples723/cw"
+
 #openai
 source ~/.dotfiles/private/keys
 #hue commands 
@@ -45,26 +23,18 @@ function notes {
 alias woff="work_mode off; dbottom"
 alias won="work_mode on; dleft"
 
-#homelab vnc tunnels
-
-alias ha-vnc="ssh -L 5903:localhost:5903 -C -N -l gsiders ha.gsiders.app"
-alias vm-vnc="ssh -L 5901:localhost:5901 -C -N -l gsiders vm.rad"
-
 #make file executable 
 alias x="chmod 755 "
 #my bash todo list 
 alias todo="vi ~/todo"
 
-#fix ssh host
-alias vsf="vi ~/.ssh/known_hosts"
-
-#Clear
 alias cl="clear"
 #modfy this file in v1i
 alias va="vi ~/.alias" 
 #config files and shortcuts
 alias dtf="cd ~/.dotfiles" 
 alias vs="vi ~/.ssh/config"
+alias vsf="vi ~/.ssh/known_hosts"
 alias github_dev="cd ~/dev/apples723 "
 #Git Shortcuts 
 alias gts="git status"

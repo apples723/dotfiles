@@ -2,6 +2,7 @@
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin:/usr/local/opt/mysql@5.7/bin
 #Puppeter for azure aws login
 export PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
+export PUPPETEER_EXECUTABLE_PATH=`which chromium`
 #AWS
 export AWS_REGION="us-east-1"
 export AWS_PROFILE="none selected"
