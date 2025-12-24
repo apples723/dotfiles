@@ -1,3 +1,13 @@
+# Manage Python Virtual Environments
+mvenv() {
+    case "$1" in
+        start) source "${2:-venv}/bin/activate" && echo "Activated: ${2:-venv}" ;;
+        stop) deactivate 2>/dev/null && echo "Deactivated virtual environment" ;;
+        "") [ -n "$VIRTUAL_ENV" ] && echo "venv active: $VIRTUAL_ENV" || echo "No venv active" ;;
+        *) echo "Usage: mvenv [start [dir]|stop]" ;;
+    esac
+}
+
 function work_mode
 {
   if [[ ${1} == "off" ]]
