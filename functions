@@ -1,5 +1,8 @@
-# Manage Python Virtual Environments
-mvenv() {
+# Python virtual environment manager
+# mvenv start [dir] - activate venv (default: venv/)
+# mvenv stop - deactivate current venv
+# mvenv - show current venv status
+mve() {
     case "$1" in
         start) source "${2:-venv}/bin/activate" && echo "Activated: ${2:-venv}" ;;
         stop) deactivate 2>/dev/null && echo "Deactivated virtual environment" ;;
