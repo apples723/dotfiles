@@ -9,17 +9,26 @@ alias assume="source assume"
 #login to sso quicker
 alias aws_login="aws sso login --profile "
 
+update_ecs_service() {
+    aws ecs update-service --cluster "$2" --service "$1" --force-new-deployment
+}
+
 
 #AWS ECR Login with multiple profiles
 function ecr_login() {
-  local ECR_ARN=$1
-  if [ -z "$1" ] 
-  then
-    echo "missing ECR ARN"  1>&2
-    exit
-  fi
-  aws ecr get-login-password | docker login --username AWS --password-stdin $ECR_ARN
+  local ACCOUNT_ID=$1
 
+  # Get account ID from AWS if not provided
+  if [ -z "$1" ]
+  then
+    echo "Getting account ID from current AWS profile..."
+    ACCOUNT_ID=$(aws sts get-caller-identity --query Account --output text)
+  fi
+
+  # Construct full ECR registry URL
+  ECR_REGISTRY="${ACCOUNT_ID}.dkr.ecr.${AWS_REGION:-us-east-1}.amazonaws.com"
+
+  aws ecr get-login-password | docker login --username AWS --password-stdin $ECR_REGISTRY
 }
 
 #show ec2 info 

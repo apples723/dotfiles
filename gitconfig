@@ -8,8 +8,15 @@
   br = branch
 [core]
   excludesfile = ~/.gitignore_global
-[url "ssh://git@github.com/"]
-	insteadOf = https://github.com/
+#[url "ssh://git@github.com/"]
+#	insteadOf = https://github.com/
 [init]
 	defaultBranch = master
 	templatedir = ~/.git_templates
+[credential]
+	helper = 
+	helper = /usr/local/share/gcm-core/git-credential-manager
+[credential "https://dev.azure.com"]
+	useHttpPath = true
+[credential "https://vcs.gsiders.app"]
+	provider = generic

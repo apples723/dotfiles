@@ -1,14 +1,17 @@
 #!/usr/bin/env bash
+# stop all docker container running on machine
+# uses jq to filter and return list of ids
+alias dockerstopall="docker container stop $(docker container ls --format json | jq .ID -r)"
+alias dc="docker-compose"
 alias viawsc="vi ~/.aws/credentials"
 alias viawsc="vi ~/.aws/config"
-
+alias gtds="git  diff --cached "
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$HOME/dev/terravision:$PATH"
 eval "$(pyenv init -)"
 alias devi="cd ~/dev/slalom" 
 alias tfv="tf validate"
-alias tfc="tf console"
-
+alias tfc="tf console"\
 #openai
 source ~/.dotfiles/private/keys
 #hue commands 
@@ -22,7 +25,7 @@ function notes {
 # swtich between work off on
 alias woff="work_mode off; dbottom"
 alias won="work_mode on; dleft"
-
+alias dcp="docker-compose "
 #make file executable 
 alias x="chmod 755 "
 #my bash todo list 
